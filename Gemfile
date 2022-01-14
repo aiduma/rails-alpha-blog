@@ -77,3 +77,6 @@ end
 group :production do
   gem 'pg'
 end
+
+# Bundle and process CSS [https://github.com/rails/cssbundling-rails]
+gem "cssbundling-rails"

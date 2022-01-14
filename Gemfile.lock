@@ -79,6 +79,8 @@ GEM
     childprocess (4.1.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
+    cssbundling-rails (1.0.0)
+      railties (>= 6.0.0)
     erubi (1.10.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -187,6 +189,7 @@ DEPENDENCIES
   bootsnap
   byebug
   capybara
+  cssbundling-rails
   importmap-rails
   jbuilder
   pg
