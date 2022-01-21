@@ -49,11 +49,7 @@ class ArticlesController < ApplicationController
   
     private
     def set_article
-      if !!session[:user_id]
-        @article ||= Article.find(session[:user_id])
-      else
-        redirect_to root_path, status: :found
-      end
+        @article = Article.find(params[:id])
     end
   
     def article_params
@@ -61,7 +57,7 @@ class ArticlesController < ApplicationController
     end
 
     def require_same_user
-      if @article && current_user !=@article.user
+      if @article && current_user !=@article.user && !current_user.admin?
         flash[:alert] = "You can only edit or delete your own article"
         redirect_to @article
       end
