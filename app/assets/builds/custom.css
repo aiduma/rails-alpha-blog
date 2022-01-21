@@ -1,5 +1,9 @@
 .navbar {
-    background-color: black !important;
+    background-color: rgb(0, 55, 128) !important;
+}
+
+.custom-toggler {
+  color: white !important;
 }
 
 .nav-link {
@@ -46,6 +50,7 @@ body {
 
 #sticky-footer {
     flex-shrink: none;
+    background-color: rgb(0, 55, 128) !important;
 }
 
 .font-italic {
