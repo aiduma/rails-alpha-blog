@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
   
     def index
       ## perform a paginated query:
-      @articles = Article.paginate(page: params[:page], per_page: 5)
+      @articles = Article.order(created_at: :desc).paginate(page: params[:page], per_page: 5)
     end
   
     def new
