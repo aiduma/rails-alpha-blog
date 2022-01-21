@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
       @article.user = current_user
       if @article.save
         flash[:notice] = "Article was created successfully."
-        redirect_to @article
+        redirect_to articles_path
       else
             render :new, status: :unprocessable_entity
       end
@@ -48,9 +48,12 @@ class ArticlesController < ApplicationController
     end
   
     private
-  
     def set_article
-      @article = Article.find(params[:id])
+      if !!session[:user_id]
+        @article ||= Article.find(session[:user_id])
+      else
+        redirect_to root_path, status: :found
+      end
     end
   
     def article_params
