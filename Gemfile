@@ -85,3 +85,7 @@ gem "cssbundling-rails"
 gem "jsbundling-rails"
 
 gem 'will_paginate', '~> 3.3'
+
+gem 'ffi', '~> 1.9', '>= 1.9.10'
+
+gem 'rexml', require: false
